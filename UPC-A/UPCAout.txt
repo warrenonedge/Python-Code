@@ -1,0 +1,3 @@
+| |   || | |||| | ||| ||   || |   || |   || | | | ||  || ||| |  |   |  |  ||| |  ||| |    | | |
+Invalid UPC-A Code: 3543524135
+Invalid UPC-A Code (Invalid Check Digit): 123456789123

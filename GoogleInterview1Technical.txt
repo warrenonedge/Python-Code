@@ -1,0 +1,48 @@
+Please use this Google doc to code during your interview. To free your hands for coding, we recommend that you use a headset or a phone with speaker option.
+
+Best,
+Google Staffing
+
+Say you're dealing with data that has a lot of repeated characters in it. You'd like to take advantage of that to compress the data. In particular, you are given the following run-length encoding scheme: An encoded string is normally passed through verbatim. However, if there is a decimal number followed by the character 'x', then the character after the x will be repeated that many times."
+For example: "abc11xkd55s" -> "abckkkkkkkkkkkd55s"
+
+abc11xk5x1584xablcjd
+
+psudo:
+	loop over string to find a number
+	if number is found:
+		read number until x
+		if other letter if found then skip number.
+		else:
+			append number * next char to result
+
+
+	
+abc11d2xj -> abc11djj 
+abc2xx3dd -> abcxx3dd
+abc3xxxds -> acbxxxxds   
+xxxxxx    -> xxxxxx
+abc1000000000000000000000000000000000x4
+
+def repeater(decode):
+	result = “”
+	number = “”
+	i = 0
+	while i < len(decode):
+	#for i, l in enumerate(decode):
+		if decode[i].isDigit():
+			number += decode[i]
+		elif decode[i] == ‘x’ and number != “”:
+			result += int(number)*decode[i+1]
+			number = “”
+			i++
+		else:
+			result += number + decode[i]
+			number = “”
+		i++
+	print(result)		
+
+l = “d”
+number = “”
+result = “abcxx3dd” 
+
